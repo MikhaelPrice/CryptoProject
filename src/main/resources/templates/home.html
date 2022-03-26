@@ -39,6 +39,7 @@
 
 <main class="form-signin">
     <form action="/" method="post">
+        <p><output name="Greeting" class="h3 mb-3 fw-normal">Let's see actual price of the crypto!</output>
         <div class="form-floating">
             <input name="username" type="text" class="form-control">
             <label>Enter an username</label>
@@ -54,7 +55,6 @@
         </div>
     </form>
 </main>
-<p><h5 name="List">List of available cryptos: Bitcoin (symbol BTC), Ethereum (symbol ETH), Solana (symbol SOL) </h5>
 <div th:each="el : ${pricesRepository}" class="alert alert-info mt-2">
     <p></p><h3 th:text="${el.username}"></h3>
     <h3 th:text="${el.symbol}"></h3>
