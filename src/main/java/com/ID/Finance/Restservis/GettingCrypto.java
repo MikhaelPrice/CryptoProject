@@ -6,6 +6,7 @@ import java.io.InputStreamReader;
 import java.net.URL;
 import java.nio.charset.StandardCharsets;
 import java.util.HashMap;
+import java.util.Locale;
 import java.util.Map;
 
 public class GettingCrypto {
@@ -48,7 +49,7 @@ public class GettingCrypto {
                 }
                 if (infValue.substring(0, index).equalsIgnoreCase("price_usd")) {
                     double price = Double.parseDouble(infValue.substring(index + 1));
-                    cryptos.put(name + symbol, price);
+                    cryptos.put(name + symbol + symbol.toLowerCase(Locale.ROOT), price);
                 }
             }
         } catch (IOException e) {
